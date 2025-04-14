@@ -48,11 +48,16 @@ resource "azurerm_subnet" "example" {
 module "route_server_example" {
   source = "../"
 
+  naming_convention = "gc"
+  user_defined      = "example"
+
   azure_resource_attributes = {
-    project     = "aur"
-    environment = "dev"
-    location    = azurerm_resource_group.example.location
-    instance    = 0
+    department_code = "Gc"
+    owner           = "ABC"
+    project         = "aur"
+    environment     = "dev"
+    location        = azurerm_resource_group.example.location
+    instance        = 0
   }
 
   resource_group_name = azurerm_resource_group.example.name
