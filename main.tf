@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip
 #
 resource "azurerm_public_ip" "this" {
-  name                = module.azure_resource_names.route_server_public_ip_address_name
+  name                = module.azure_resource_names.public_ip_address_route_server_name
   resource_group_name = var.resource_group_name
   location            = var.azure_resource_attributes.location
 
